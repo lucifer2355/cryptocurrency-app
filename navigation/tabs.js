@@ -27,11 +27,95 @@ const Tabs = () => {
         },
       }}
     >
-      <Tab.Screen name='Home' component={Home} />
-      <Tab.Screen name='Portfolio' component={Home} />
+      <Tab.Screen
+        name='Home'
+        component={Home}
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <View style={{ alignItems: "center", justifyContent: "center" }}>
+              <Image
+                source={icons.home}
+                resizeMode='contain'
+                style={{
+                  width: 30,
+                  height: 30,
+                  tintColor: focused ? COLORS.primary : COLORS.black,
+                }}
+              />
+              <Text style={{ color: focused ? COLORS.primary : COLORS.black }}>
+                HOME
+              </Text>
+            </View>
+          ),
+        }}
+      />
+      <Tab.Screen
+        name='Portfolio'
+        component={Home}
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <View style={{ alignItems: "center", justifyContent: "center" }}>
+              <Image
+                source={icons.pie_chart}
+                resizeMode='contain'
+                style={{
+                  width: 30,
+                  height: 30,
+                  tintColor: focused ? COLORS.primary : COLORS.black,
+                }}
+              />
+              <Text style={{ color: focused ? COLORS.primary : COLORS.black }}>
+                PORTFOLIO
+              </Text>
+            </View>
+          ),
+        }}
+      />
       <Tab.Screen name='Transaction' component={Home} />
-      <Tab.Screen name='Prices' component={Home} />
-      <Tab.Screen name='Settings' component={Home} />
+      <Tab.Screen
+        name='Prices'
+        component={Home}
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <View style={{ alignItems: "center", justifyContent: "center" }}>
+              <Image
+                source={icons.line_graph}
+                resizeMode='contain'
+                style={{
+                  width: 30,
+                  height: 30,
+                  tintColor: focused ? COLORS.primary : COLORS.black,
+                }}
+              />
+              <Text style={{ color: focused ? COLORS.primary : COLORS.black }}>
+                PRICES
+              </Text>
+            </View>
+          ),
+        }}
+      />
+      <Tab.Screen
+        name='Settings'
+        component={Home}
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <View style={{ alignItems: "center", justifyContent: "center" }}>
+              <Image
+                source={icons.settings}
+                resizeMode='contain'
+                style={{
+                  width: 30,
+                  height: 30,
+                  tintColor: focused ? COLORS.primary : COLORS.black,
+                }}
+              />
+              <Text style={{ color: focused ? COLORS.primary : COLORS.black }}>
+                SETTINGS
+              </Text>
+            </View>
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 };
