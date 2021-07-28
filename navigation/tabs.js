@@ -1,10 +1,9 @@
 import React from "react";
-import { View, Image, TouchableOpacity, Text, StyleSheet } from "react-native";
+import { View, Image, Text, StyleSheet } from "react-native";
 import {
   createBottomTabNavigator,
   BottomTabBar,
 } from "@react-navigation/bottom-tabs";
-import LinearGradient from "react-native-linear-gradient";
 
 import { Home } from "../screens";
 import { COLORS, FONTS, icons } from "../constants";
