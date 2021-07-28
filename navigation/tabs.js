@@ -8,6 +8,7 @@ import LinearGradient from "react-native-linear-gradient";
 
 import { Home } from "../screens";
 import { COLORS, FONTS, icons } from "../constants";
+import TabBarCustomButton from "../components/TabBarCustomButton";
 
 const Tab = createBottomTabNavigator();
 
@@ -71,7 +72,20 @@ const Tabs = () => {
           ),
         }}
       />
-      <Tab.Screen name='Transaction' component={Home} />
+      <Tab.Screen
+        name='Transaction'
+        component={Home}
+        options={{
+          tabBarIcon: ({ focused }) => (
+            <Image
+              source={icons.transaction}
+              resizeMode='contain'
+              style={{ width: 30, height: 30, tintColor: COLORS.white }}
+            />
+          ),
+          tabBarButton: (props) => <TabBarCustomButton {...props} />,
+        }}
+      />
       <Tab.Screen
         name='Prices'
         component={Home}
